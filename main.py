@@ -50,7 +50,7 @@ def game():
     if ball.ycor() > 280:
         ball.bounce('y')
 
-    if ball.ycor() < -280:
+    if ball.ycor() < -305:
         screen.bye()
 
     for brick in bricks:
@@ -70,7 +70,7 @@ def game():
             scoreboard.increase_score()
             break
 
-    if 100 >= paddle.xcor() - ball.xcor() >= -100 and ball.ycor() < -270:
+    if -100 <= paddle.xcor() - ball.xcor() <= 100 and ball.ycor() < -260:
         ball.bounce_paddle()
 
     turtle.ontimer(game, 50)
